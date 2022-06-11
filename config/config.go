@@ -13,6 +13,7 @@ var (
 	config *configStruct
 )
 
+//configstruct are your own data types in golang
 type configStruct struct {
 	Token     string `json:"Token"`
 	BotPrefix string `json:"BotPrefix"`
@@ -21,7 +22,7 @@ type configStruct struct {
 func ReadConfig() error {
 	fmt.Println("Reading config file...")
 
-	file, err := ioutil.ReadFile("./config.json")
+	file, err := ioutil.ReadFile("./config.json") //read the file contents
 
 	if err != nil {
 		fmt.Println(err.Error())
@@ -30,13 +31,13 @@ func ReadConfig() error {
 
 	fmt.Println(string(file))
 
-	json.Unmarshal(file, config)
+	err = json.Unmarshal(file, config) //unmarshall the file and bring the values into the config
 
 	if err != nil {
 		fmt.Println(err.Error())
 		return err
 	}
-
+	//assign the config
 	Token = config.Token
 	BotPrefix = config.BotPrefix
 

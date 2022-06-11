@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/NurTahmid/ChadBotPolice/bot"
+	"github.com/NurTahmid/ChadBotPolice/config"
 )
 
 func main() {
