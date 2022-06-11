@@ -31,7 +31,7 @@ func ReadConfig() error {
 
 	fmt.Println(string(file))
 
-	err = json.Unmarshal(file, config) //unmarshall the file and bring the values into the config
+	err = json.Unmarshal(file, &config) //unmarshall the file and bring the values into the config
 
 	if err != nil {
 		fmt.Println(err.Error())
